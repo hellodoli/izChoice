@@ -1,0 +1,105 @@
+// 1.main font: Roboto Slab
+// 2.title font: Osward
+// 3.speacial title font: Dancing script
+
+// font-size: 14px + main font + colors:(yellow + des + white)
+.ar-text-info{
+    font-size: rem(14px);
+    &--yellow{
+        color: $color-primary;
+    }
+    &--gray{
+        color: $color-gray-dark;
+    }
+    &--white{
+        color: $color-white;
+    }
+}
+
+// font-size: 14px + main font + des color 
+.ar-text-paragraph{
+    font-size: rem(14px);
+    color: $color-gray-dark;
+    line-height: 1.8;
+    &:not(:last-child){
+        margin-bottom: rem(22px);
+    }
+}
+
+//font-size: 20px + title font + colors:(white or black)
+.ar-text-des{
+    font-family: $font-osward;
+    font-size: rem(20px);
+    &--white{
+        color: $color-white;
+    }
+    &--black{
+        color: $color-gray-dark-3;
+    }
+}
+
+//special title
+.ar-heading{
+    display: block;
+    position: relative;
+    text-transform: capitalize;
+    line-height: 1.4;
+    margin: 0;
+
+    &-wrapper{
+        margin-bottom: rem(60px);
+    }
+
+    &--style-1{
+        font-family: $font-dancingscript;
+        font-size: rem(38px);
+        font-weight: 700;
+        color: $color-primary;
+        margin-bottom: 0;
+        &.order{
+            font-size: rem(33px);
+        }
+    }
+    &--style-2{
+        font-family: $font-osward;
+        font-size: rem(24px);
+        font-weight: 700;
+        color: $color-gray-dark-3;
+        margin-bottom: rem(20px);
+        &.order{
+            font-size: rem(28px);
+        }
+    }
+    &--style-3{
+        font-family: $font-lato;
+        color: $color-white;
+        font-size: rem(36px);
+        text-transform: initial;
+        &.order{
+            font-size: rem(30px);
+        }
+    }
+}
+
+@include breakpoint(max-phone){
+    .ar-heading--style-1{
+        font-size: rem(28px);
+        &.order{
+            font-size: rem(28px);
+        }
+    }
+    .ar-heading--style-2{
+        &.order{
+            font-size: rem(24px);
+        }
+    }
+    .ar-heading--style-3{
+        font-size: rem(20px);
+        &.order{
+            font-size: rem(20px);
+        }
+    }
+    .ar-heading-wrapper{
+        margin-bottom: rem(30px);
+    }
+}

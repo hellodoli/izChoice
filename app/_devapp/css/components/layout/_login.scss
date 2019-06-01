@@ -1,0 +1,110 @@
+.iz-login-container,
+.iz-enrol-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    pointer-events: auto;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+}
+.iz-login-fixed-wrapper,
+.iz-enrol-fixed-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
+.iz-enrol-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 1rem);
+    width: auto;
+    margin: .5rem;
+    pointer-events: none;
+    
+    @media (min-width: 576px) {
+        max-width: 500px;
+        margin: 1.75rem auto;
+        min-height: calc(100% - 3.5rem);
+    }
+}
+
+// Login
+.iz-login-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100vh;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+    label{
+        font-size: rem(14px);
+    }
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder{
+        font-size: rem(14px);
+        color: var(--gray);
+    }
+
+    & > div{
+        height: 100%;
+    }
+    .left{
+        flex: 1 1 auto;
+    }
+    .right-inner{
+        flex: 0 0 auto;
+        min-width: 320px;
+        padding: rem(80px) rem(40px)!important;
+        overflow: hidden;
+    }
+    .btn-login{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.iz-login-wall{
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .iz-login-logo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+.circle-logo {
+    width: 120px;
+    height: 120px;
+    background-color: $color-white;
+    border-radius: 50%;
+    &--center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+// Enrol
+.enrol-go {
+    padding: rem(80px) 0;
+}
+.iz-card-enrol{
+    .card + .card {
+        margin-top: rem(20px);
+    }
+}

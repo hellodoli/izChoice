@@ -1,0 +1,69 @@
+// Side bar.
+.iz-controller-left {
+    position: fixed;
+    top: 0; left: 0;
+    width: 84px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+    background-color: #394b58;
+    &.closed{
+        width: 54px;
+        .toggle-sidebar .btn-toggle {
+            transform: rotateY(180deg);
+        }
+        & + .iz-controller-right, & ~ #izStoreSubMenu .iz-submenu {
+            margin-left: 54px;
+        }
+    }
+    .toggle-sidebar{
+        width: 100%;
+        text-align: center;
+        padding: 0.5625rem 0;
+        z-index: 1;
+        .btn-toggle {
+            display: block;
+            margin: 0 auto;
+            color: $color-white;
+            text-align: center;
+            perspective: 600px;
+            box-shadow: none;
+            outline: none;
+            transition: all .4s;
+            .svg-inline--fa {
+                display: inline-block;
+                width: 30px; height: 30px;
+                vertical-align: middle;
+                fill: $color-white;
+            }
+        }
+    }
+}
+// Main dashboard
+.iz-controller-right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 84px;
+    .iz-controller-right-wrapper {
+        padding: rem(50px) 0;
+    }
+}
+
+.iz-main-controller {
+    .iz-header {
+        // border-bottom: 1px solid #C7CDD1;
+        background-color: $color-white;
+        min-height: 33px;
+        padding-bottom: rem(12px);
+        & + .iz-body{
+            margin-top: rem(20px);
+        }
+    }
+
+    .iz-live-search-form + .iz-data,
+    .iz-search-form + .iz-data {
+        margin-top: rem(30px);
+    }
+}

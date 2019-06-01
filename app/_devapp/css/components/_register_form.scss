@@ -1,0 +1,19 @@
+#modalRegister {
+    .iz-form-alert-wrapper {
+        margin-top: 20px;
+        width: 100%;
+        .alert{
+            margin-bottom: 0;
+        }
+    }
+
+    .row .iz-form-alert-wrapper {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    select.is-invalid, select.is-valid, 
+    input[type="time"], input[type="date"] {
+        //background-image: none!important;
+    }
+}

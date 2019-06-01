@@ -1,0 +1,99 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-full-width-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-vertical-center{
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-horizontal-center{
+    display: flex;
+    justify-content: center;
+}
+
+// MEDIA QUERIES MANAGER
+/*
+<= 375px
+376px - 479px       Mini Phone
+480px - 575px       Phone
+576px - 767px       Max Phone
+768px - 991px       Tablet
+992px - 1199px      Laptop
+1200px+             Big desktop
+*/
+
+/*
+    $breakpoint choices:
+    - mini-phone
+    - phone
+    - max-phone
+    - tablet
+    - laptop
+    - desktop
+    ORDER: base + typography > general layout + grid > page layout > components
+*/
+
+@mixin breakpoint($media) {
+    @if $media == mini-phone {
+        @media (max-width: 375px) { @content; }
+    }
+    @if $media == phone {
+        @media (max-width: 479px) { @content; }
+    }
+    @if $media == max-phone {
+        @media (max-width: 575px) { @content; }
+    }
+    @else if $media == tablet {
+        @media (max-width: 767px) {@content; }
+    }
+    @else if $media == laptop {
+        @media (max-width: 991px) { @content; }
+    }
+    @else if $media == desktop {
+        @media (max-width: 1199px) { @content; }
+    }
+}
+@mixin breakpoint_up($media){
+    @if $media == mini-phone {
+        @media (min-width: 376px) { @content; }
+    }
+    @if $media == phone {
+        @media (min-width: 480px) { @content; }
+    }
+    @if $media == max-phone {
+        @media (min-width: 576px) { @content; }
+    }
+    @else if $media == tablet {
+        @media (min-width: 768px) {@content; }
+    }
+    @else if $media == laptop {
+        @media (min-width: 992px) { @content; }
+    }
+    @else if $media == desktop {
+        @media (min-width: 1200px) { @content; }
+    }
+}

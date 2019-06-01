@@ -1,0 +1,97 @@
+// Hidden class
+.d-md-down-none{
+    @include breakpoint(laptop){
+        display: none!important;    
+    }
+}
+.d-lg-up-none{
+    @include breakpoint_up(laptop){
+        display: none!important;
+    }
+}
+
+// Col
+.col-sm-down-mt:not(:first-child){
+    @include breakpoint(tablet){
+        margin-top: rem(30px);
+    }
+}
+.col-md-down-mt:not(:first-child){
+    @include breakpoint(laptop){
+        margin-top: rem(30px);
+    }
+}
+
+// Container
+.ar-section{
+    padding: rem(80px) 0;
+    &.ar-parallax-image{
+        padding: 0;
+    }
+}
+.ar-full-width-wrapper{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+@include breakpoint(max-phone){
+    .ar-section{
+        padding: rem(40px) 0;
+    }
+}
+
+// Image
+.ar-item-image-holder{
+    position: relative;
+    @include flex-vertical-center;
+}
+.ar-item-image{
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+// Color
+.c-primary{
+    color: $color-primary!important;
+}
+.c-white{
+    color: $color-white!important;
+}
+.c-black{
+    color: $color-gray-dark-3!important;
+}
+
+// Background
+.bg-main{
+    background-color: $color-m!important;
+}
+
+// Margin, padding
+$list-ulti: ( big: rem(60px), medium: rem(30px), small: rem(22px), xsmall: rem(10px) );
+@each $k, $v in $list-ulti {
+
+    .mb-#{$k}{ margin-bottom: $v; }
+        
+    .ml-#{$k}{ margin-left: $v; }
+        
+    .mt-#{$k}{ margin-top: $v; }
+        
+    .mr-#{$k}{ margin-right: $v; }
+
+    .m-#{$k}{ margin: $v; }
+        
+    .pb-#{$k}{ padding-bottom: $v; }
+        
+    .pl-#{$k}{ padding-left: $v; }
+        
+    .pt-#{$k}{ padding-top: $v; }
+        
+    .pr-#{$k}{ padding-right: $v; }
+
+    .p-#{$k}{ padding: $v; }
+
+}
